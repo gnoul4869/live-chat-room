@@ -1,6 +1,6 @@
 <template>
     <div class="home container">
-        <p>Home</p>
+        <p>Welcome</p>
         <div v-if="showLogin">
             <LoginForm />
             <p>No account yet? <span @click="showLogin = false">Signup</span> instead</p>

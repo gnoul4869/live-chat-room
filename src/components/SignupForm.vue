@@ -9,16 +9,20 @@
 
 <script>
 import { ref } from '@vue/reactivity';
+import useSignup from '@/composables/useSignup';
+
 export default {
     setup() {
+        const { signup, error } = useSignup();
+
         const username = ref('');
         const email = ref('');
         const password = ref('');
 
-        const handleSubmit = () => {
-            console.log(username.value);
-            console.log(email.value);
-            console.log(password.value);
+        const handleSubmit = async () => {
+            await signup(email.value, password.value, username.value);
+
+            console.log('User signed up');
         };
 
         return { username, email, password, handleSubmit };
