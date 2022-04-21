@@ -20,8 +20,7 @@ const signup = async (email, password, username) => {
 
         return res;
     } catch (err) {
-        console.log(err.message);
-        error.value = err.message;
+        error.value = err.message.replace('Firebase: ', '');
     }
 };
 

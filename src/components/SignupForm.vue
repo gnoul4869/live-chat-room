@@ -3,6 +3,7 @@
         <input type="text" required placeholder="username" v-model="username" />
         <input type="email" required placeholder="email" v-model="email" />
         <input type="password" required placeholder="password" v-model="password" />
+        <div class="error">{{ error }}</div>
         <button>Signup</button>
     </form>
 </template>
@@ -21,11 +22,10 @@ export default {
 
         const handleSubmit = async () => {
             await signup(email.value, password.value, username.value);
-
             console.log('User signed up');
         };
 
-        return { username, email, password, handleSubmit };
+        return { username, email, password, error, handleSubmit };
     },
 };
 </script>
