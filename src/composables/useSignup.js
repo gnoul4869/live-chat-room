@@ -4,7 +4,7 @@ import { ref } from 'vue';
 
 const error = ref(null);
 
-const signup = async (email, password, username) => {
+const signup = async (email, password, displayName) => {
     error.value = null;
 
     try {
@@ -14,7 +14,7 @@ const signup = async (email, password, username) => {
             throw new Error('Error creating user');
         }
 
-        await updateProfile(res.user, { displayName: username });
+        await updateProfile(res.user, { displayName });
 
         console.log(res.user);
 

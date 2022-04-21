@@ -1,8 +1,10 @@
 <template>
-    <nav>
+    <nav v-if="user">
         <div>
-            <p>Hey there... username</p>
-            <p class="email">Currently logged in as... email</p>
+            <p>
+                Hey there <span class="username">{{ user.displayName }}</span>
+            </p>
+            <p class="email">Currently logged in as {{ user.email }}</p>
         </div>
         <button @click="handleLogout">Logout</button>
     </nav>
@@ -10,10 +12,12 @@
 
 <script>
 import useLogout from '@/composables/useLogout';
+import getUser from '@/composables/getUser';
 
 export default {
     setup() {
         const { logout, error } = useLogout();
+        const { user } = getUser();
 
         const handleLogout = async () => {
             await logout();
@@ -22,7 +26,7 @@ export default {
             }
         };
 
-        return { error, handleLogout };
+        return { error, user, handleLogout };
     },
 };
 </script>
@@ -46,5 +50,9 @@ nav p.email {
 }
 nav button {
     cursor: pointer;
+}
+nav .username {
+    color: coral;
+    font-weight: 600;
 }
 </style>

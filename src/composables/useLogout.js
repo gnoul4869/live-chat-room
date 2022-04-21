@@ -1,6 +1,5 @@
 import { signOut } from '@firebase/auth';
 import { fireAuth } from '@/firebase/config';
-
 import { ref } from 'vue';
 
 const error = ref(null);
