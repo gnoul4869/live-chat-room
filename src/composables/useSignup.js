@@ -1,5 +1,5 @@
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from '@firebase/auth';
 import { fireAuth } from '@/firebase/config';
+import { createUserWithEmailAndPassword, updateProfile } from '@firebase/auth';
 import { ref } from 'vue';
 
 const error = ref(null);

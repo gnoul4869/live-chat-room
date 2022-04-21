@@ -22,7 +22,9 @@ export default {
 
         const handleSubmit = async () => {
             await signup(email.value, password.value, username.value);
-            console.log('User signed up');
+            if (!error.value) {
+                console.log('User signed up');
+            }
         };
 
         return { username, email, password, error, handleSubmit };
