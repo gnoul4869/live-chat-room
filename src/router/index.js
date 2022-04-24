@@ -3,6 +3,14 @@ import { fireAuth } from '@/firebase/config.js';
 import ChatroomView from '@/views/ChatroomView.vue';
 import HomeView from '../views/HomeView.vue';
 
+const requireNoAuth = (to, from, next) => {
+    const user = fireAuth.currentUser;
+    if (user) {
+        next({ name: 'Chatroom' });
+    }
+    next();
+};
+
 const requireAuth = (to, from, next) => {
     const user = fireAuth.currentUser;
     if (!user) {
@@ -16,6 +24,7 @@ const routes = [
         path: '/',
         name: 'Home',
         component: HomeView,
+        beforeEnter: requireNoAuth,
     },
     {
         path: '/chatroom',
