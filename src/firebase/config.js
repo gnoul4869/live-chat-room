@@ -3,12 +3,13 @@ import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyD5SOgIcnZQUhsD-KPckXXFEDOvR-g83jk',
-    authDomain: 'vue-firebase-913a7.firebaseapp.com',
-    projectId: 'vue-firebase-913a7',
-    storageBucket: 'vue-firebase-913a7.appspot.com',
-    messagingSenderId: '231001948803',
-    appId: '1:231001948803:web:43983de41a40c4b72911b6',
+    apiKey: 'AIzaSyApuY7_ePpNv2LtX4IZlLSVXJBpaXz0Jpc',
+    authDomain: 'live-chat-room-v2.firebaseapp.com',
+    projectId: 'live-chat-room-v2',
+    storageBucket: 'live-chat-room-v2.appspot.com',
+    messagingSenderId: '274904558684',
+    appId: '1:274904558684:web:a5014cd84d41db7e878a99',
+    measurementId: 'G-7SGC0D6ZVW',
 };
 
 const app = initializeApp(firebaseConfig);
