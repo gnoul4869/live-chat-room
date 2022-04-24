@@ -1,5 +1,5 @@
 import { firestore } from '@/firebase/config';
-import { collection, onSnapshot, orderBy } from '@firebase/firestore';
+import { collection, onSnapshot, orderBy, query } from '@firebase/firestore';
 import { ref } from 'vue';
 
 const getCollection = (collectionName) => {
