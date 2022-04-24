@@ -16,8 +16,6 @@ const signup = async (email, password, displayName) => {
 
         await updateProfile(res.user, { displayName });
 
-        console.log(res.user);
-
         return res;
     } catch (err) {
         error.value = err.message.replace('Firebase: ', '');

@@ -34,7 +34,6 @@ export default {
         const messages = ref(null);
 
         onUpdated(() => {
-            console.log(messages.value.scrollHeight, messages.value);
             messages.value.scrollTop = messages.value.scrollHeight;
         });
 
