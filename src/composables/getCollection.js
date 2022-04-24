@@ -7,7 +7,7 @@ const getCollection = (collectionName) => {
     const error = ref(null);
 
     const conllectionRef = collection(firestore, collectionName);
-    const collectionQuery = query(conllectionRef, orderBy('createdAt', 'desc'));
+    const collectionQuery = query(conllectionRef, orderBy('createdAt', 'asc'));
     onSnapshot(
         collectionQuery,
         (snapshot) => {
