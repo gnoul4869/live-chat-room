@@ -1,8 +1,8 @@
 # live-chat-room
 
-Live chatroom web application to chat with other people around the world
-
 <pre>
+"Live chatroom web application to chat with other people around the world"
+
 Languages: JavaScript, HTML, CSS
 Framework: Vue.js
 Database: Firestore
