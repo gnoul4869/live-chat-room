@@ -9,6 +9,8 @@ const login = async (email, password) => {
 
     try {
         const res = await signInWithEmailAndPassword(fireAuth, email, password);
+
+        return res;
     } catch (err) {
         error.value = err.message.replace('Firebase: ', '');
     }
